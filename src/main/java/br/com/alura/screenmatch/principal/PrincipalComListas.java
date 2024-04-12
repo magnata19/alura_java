@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
   public static void main(String[] args) {
@@ -27,5 +29,19 @@ public class PrincipalComListas {
         System.out.println("Classificação: " + meuFilme.getClassificacao());
       }
     }
+
+    ArrayList<String> buscaPorAtores = new ArrayList<>();
+    buscaPorAtores.add("Adam Sandle");
+    buscaPorAtores.add("Tom Hanks");
+    buscaPorAtores.add("Bruce Willis");
+    Collections.sort(buscaPorAtores);
+    System.out.println("Meus titulos nao ordenados: " + meusTitulos);
+    Collections.sort(meusTitulos);
+    System.out.println("Meus titulos ordenados: " + meusTitulos);
+    meusTitulos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+    System.out.println("Ordenando por ano");
+    System.out.println(meusTitulos);
+
+
   }
 }
